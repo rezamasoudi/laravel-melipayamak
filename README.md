@@ -1,3 +1,7 @@
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/masoudi/melipayamak.svg?style=flat)](https://packagist.org/packages/masoudi/melipayamak)
+[![Total Downloads](https://img.shields.io/packagist/dt/masoudi/melipayamak.svg?style=flat)](https://packagist.org/packages/masoudi/melipayamak)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](https://opensource.org/licenses/MIT)
+
 # Laravel Meli Payamak - پکیج لارال ملی پیامک
 ملی پیامک یک سرویس ارسال پیامک است. این پکیج به شما کمک می کند با استفاده از این سرویس در لاراول برای کاربران خود پیامک ارسال کنید.
 
