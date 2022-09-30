@@ -38,6 +38,7 @@ php artisan make:notification VerificationCodeNotification
 use Masoudi\Melipayamak\Contracts\SMSNotification;
 use Masoudi\Melipayamak\MeliPayamak;
 
+// SMSNotification ایمپلمنت کنید
  class VerificationCodeNotification extends Notification implements SMSNotification {
 
     private $verificationCode;
