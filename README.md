@@ -17,16 +17,33 @@ composer require masoudi/melipayamak
 php artisan vendor:publish --tag=melipayamak 
 ```
 
-در فایل تنظیمات `config/melipayamak.php` اطلاعات حساب خودتان را قرار دهید
+در فایل `.env` اطلاعات حساب خودتان را قرار دهید
 
-```php
-    'uri' => 'http://api.payamak-panel.com/post/send.asmx?wsdl',
-    'user' => '09123456789',
-    'password' => 'Pass#123',
+```dotenv
+MELIPAYAMAK_URI=http://api.payamak-panel.com/post/send.asmx?wsdl
+MELIPAYAMAK_USER=username
+MELIPAYAMAK_PASSWORD=password
 ```
 
 ## \# ارسال پیامک
-اکنون می توانید به این صورت پیامک ارسال کنید. با دستور آرتیسان یک ناتیفیکیشن بسازید
+اکنون می توانید به دو صورت پیامک ارسال کنید.
+
+### از طریق کلاس MeliPayamak
+
+```php
+use Masoudi\Melipayamak\MeliPayamak;
+
+$meliPayamak = resolve(MeliPayamak::class);
+$meliPayamak->sendPatternSms(
+      "9112345678", // شماره کاربر
+      "48222", // کد پترن که در پنل ملی پیامک ساختید
+      ['1234'] // آرایه متغییرهای پترن به ترتیب
+  );
+
+```
+
+### از طریق ناتیفیکیشن
+با دستور آرتیسان یک ناتیفیکیشن بسازید
 
 ```bash
 php artisan make:notification VerificationCodeNotification
@@ -34,12 +51,11 @@ php artisan make:notification VerificationCodeNotification
  فایل ناتیفیکیشن ایجاد شده در مسیر `app/Notifications/VerificationCodeNotification.php` را ویرایش کنید.
 
  ```php
- use Masoudi\Melipayamak\Channels\MeliPayamakChannel;
-use Masoudi\Melipayamak\Contracts\SMSNotification;
+use Masoudi\Melipayamak\Notifications\MelipayamakNotification;
 use Masoudi\Melipayamak\MeliPayamak;
 
-// SMSNotification ایمپلمنت کنید
- class VerificationCodeNotification extends Notification implements SMSNotification {
+// کلاس را از MelipayamakNotification ارث بری کنید
+ class VerificationCodeNotification extends MelipayamakNotification {
 
     private $verificationCode;
 
@@ -48,16 +64,9 @@ use Masoudi\Melipayamak\MeliPayamak;
         $this->verificationCode = $code;
     }
 
-    public function via($notifiable)
-    {
-        // کانال ملی پیامک را اضافه کنید
-        return [MeliPayamakChannel::class];
-    }
-
-    // این متد اس ام اس را ارسال میکند
+    // این متد را اضافه کنید
     public function toSMS(mixed $notifiable, MeliPayamak $meliPayamak)
     {
-        // ار سال اس ام اس
         $meliPayamak->sendPatternSms(
             "9112345678", // شماره کاربر
             "48222", // کد پترن که در پنل ملی پیامک ساختید
@@ -67,10 +76,11 @@ use Masoudi\Melipayamak\MeliPayamak;
  }
  ```
 
- در نهایت هر جا نیاز به ارسال ناتیفیکیشن دارید آن را ارسال کنید 
+ در نهایت در کنترلر بدین صورت از ناتیفیکیشن استفاده کنید 
  
  ```php
-    $verifyCode = 2345;
+    $user = User::where('mobile', $request->mobile)->first();
     
+    $verifyCode = 2345;
     $user->notify(new VerificationCodeNotification($verifyCode));
  ```
