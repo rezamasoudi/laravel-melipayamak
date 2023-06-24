@@ -3,18 +3,22 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](https://opensource.org/licenses/MIT)
 
 # Laravel Meli Payamak - پکیج لاراول ملی پیامک
-[ملی پیامک](https://www.melipayamak.com) یک سرویس ارسال پیامک است. این پکیج به شما کمک می کند با استفاده از سرویس ملی پیامک در لاراول برای کاربران خود پیامک ارسال کنید.
+
+[ملی پیامک](https://www.melipayamak.com) یک سرویس ارسال پیامک است. این پکیج به شما کمک می کند با استفاده از سرویس ملی
+پیامک در لاراول برای کاربران خود پیامک ارسال کنید.
 
 <b align="center">مشاهده آموزش پکیج در آپارات</b>
 
-<style>.h_iframe-aparat_embed_frame{position:relative;}.h_iframe-aparat_embed_frame .ratio{display:block;width:100%;height:auto;}.h_iframe-aparat_embed_frame iframe{position:absolute;top:0;left:0;width:100%;height:100%;}</style><div class="h_iframe-aparat_embed_frame"><span style="display: block;padding-top: 57%"></span><iframe src="https://www.aparat.com/video/video/embed/videohash/Kljys/vt/frame?titleShow=true"  allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe></div>
+<div id="32820575219"><script type="text/JavaScript" src="https://www.aparat.com/embed/Kljys?data[rnddiv]=32820575219&data[responsive]=yes&titleShow=true"></script></div>
 
 ## \# نصب و راه اندازی
+
 ابتدا پکیج را با دستور زیر از کامپوزر نصب کنید
 
 ```bash
 composer require masoudi/melipayamak
 ```
+
 سپس فایل کافیگ پکیج را با دستور زیر ایجاد کنید
 
 ```bash
@@ -30,6 +34,7 @@ MELIPAYAMAK_PASSWORD=password
 ```
 
 ## \# ارسال پیامک
+
 اکنون می توانید به دو صورت پیامک ارسال کنید.
 
 ### از طریق کلاس MeliPayamak
@@ -47,12 +52,14 @@ $meliPayamak->sendPatternSms(
 ```
 
 ### از طریق ناتیفیکیشن
+
 با دستور آرتیسان یک ناتیفیکیشن بسازید
 
 ```bash
 php artisan make:notification VerificationCodeNotification
 ```
- فایل ناتیفیکیشن ایجاد شده در مسیر `app/Notifications/VerificationCodeNotification.php` را ویرایش کنید.
+
+فایل ناتیفیکیشن ایجاد شده در مسیر `app/Notifications/VerificationCodeNotification.php` را ویرایش کنید.
 
  ```php
 use Masoudi\Melipayamak\Notifications\MelipayamakNotification;
@@ -80,8 +87,8 @@ use Masoudi\Melipayamak\MeliPayamak;
  }
  ```
 
- در نهایت در کنترلر بدین صورت از ناتیفیکیشن استفاده کنید 
- 
+در نهایت در کنترلر بدین صورت از ناتیفیکیشن استفاده کنید
+
  ```php
     $user = User::where('mobile', $request->mobile)->first();
     
