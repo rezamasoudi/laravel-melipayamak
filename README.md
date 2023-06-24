@@ -5,6 +5,10 @@
 # Laravel Meli Payamak - پکیج لاراول ملی پیامک
 [ملی پیامک](https://www.melipayamak.com) یک سرویس ارسال پیامک است. این پکیج به شما کمک می کند با استفاده از سرویس ملی پیامک در لاراول برای کاربران خود پیامک ارسال کنید.
 
+<b align="center">مشاهده آموزش پکیج در آپارات</b>
+
+<style>.h_iframe-aparat_embed_frame{position:relative;}.h_iframe-aparat_embed_frame .ratio{display:block;width:100%;height:auto;}.h_iframe-aparat_embed_frame iframe{position:absolute;top:0;left:0;width:100%;height:100%;}</style><div class="h_iframe-aparat_embed_frame"><span style="display: block;padding-top: 57%"></span><iframe src="https://www.aparat.com/video/video/embed/videohash/Kljys/vt/frame?titleShow=true"  allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe></div>
+
 ## \# نصب و راه اندازی
 ابتدا پکیج را با دستور زیر از کامپوزر نصب کنید
 
