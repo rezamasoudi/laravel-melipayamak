@@ -30,5 +30,8 @@
                 "Masoudi\\Melipayamak\\MeliPayamakServiceProvider"
             ]
         }
-    }
+    },
+  "require": {
+    "ext-soap": "*"
+  }
 }
