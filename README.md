@@ -7,7 +7,9 @@
 [ملی پیامک](https://www.melipayamak.com) یک سرویس ارسال پیامک است. این پکیج به شما کمک می کند با استفاده از سرویس ملی
 پیامک در لاراول برای کاربران خود پیامک ارسال کنید.
 
-<b align="center">مشاهده آموزش پکیج در آپارات</b>
+<br>
+
+<p align="center" style="font-weight: bold">مشاهده آموزش پکیج در آپارات</p>
 
 [![Video](https://github.com/rezamasoudi/laravel-melipayamak/assets/109284641/b1e9bd56-e97d-4c50-a52c-b1a786f797d8)](https://www.aparat.com/v/Kljys)
 
