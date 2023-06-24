@@ -9,7 +9,7 @@
 
 <b align="center">مشاهده آموزش پکیج در آپارات</b>
 
-<div id="32820575219"><script type="text/JavaScript" src="https://www.aparat.com/embed/Kljys?data[rnddiv]=32820575219&data[responsive]=yes&titleShow=true"></script></div>
+[![Video](https://github.com/rezamasoudi/laravel-melipayamak/assets/109284641/b1e9bd56-e97d-4c50-a52c-b1a786f797d8)](https://www.aparat.com/v/Kljys)
 
 ## \# نصب و راه اندازی
 
