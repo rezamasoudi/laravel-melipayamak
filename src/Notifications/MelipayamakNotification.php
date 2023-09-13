@@ -5,8 +5,9 @@ namespace Masoudi\Melipayamak\Notifications;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Masoudi\Melipayamak\Channels\MeliPayamakChannel;
+use Masoudi\Melipayamak\Contracts\SMSNotification;
 
-class MelipayamakNotification extends Notification
+abstract class MelipayamakNotification extends Notification implements SMSNotification
 {
     use Queueable;
 
